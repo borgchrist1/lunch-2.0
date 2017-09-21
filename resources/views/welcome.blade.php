@@ -12,89 +12,89 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/main.css" type="text/css">
     </head>
-   <body>
-    <div class="container top-buffer">
-        <div class="row">
-            <div class="col-md-12">
-            <div class="hero">
-            <img src="img/lindholmen.jpg">
-                <h1>Dagens Lunch</h1>
-            </div>    
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-inline top-buffer">
-                    <div class="form-controll padding">
-                        Select all
-                        <input class="checkbox all" type="checkbox" value="Select all">
-                    </div>
-                    <div class="form-controll padding">
-                        Äran
-                        <input class="checkbox checkboxes" type="checkbox" checked value="Äran">
-                    </div>
-                    <div class="form-controll padding">
-                        Kebab
-                        <input class="checkbox checkboxes" type="checkbox" checked value="Kebab">
-                    </div>
-                    <div class="form-controll padding">
-                        Korv
-                        <input class="checkbox checkboxes" type="checkbox" checked value="Korv">
-                    </div>
-                    <div class="form-controll padding">
-                        Indiskt
-                        <input class="checkbox checkboxes" type="checkbox"checked value="Indiskt">
-                    </div>
-                    <div class="form-controll padding">
-                        Pizza
-                        <input class="checkbox checkboxes" type="checkbox" checked value="Pizza">
-                    </div>
-                    <div class="form-controll padding">
-                        Thai
-                        <input class="checkbox checkboxes" type="checkbox" checked value="Thai">
-                    </div>
-                    <div class="form-controll padding">
-                        Siencepark
-                        <input class="checkbox checkboxes" type="checkbox" checked value="Siencepark">
-                    </div>
-                    <div class="form-controll padding">
-                        Ericsson
-                        <input class="checkbox checkboxes" type="checkbox" checked value="Ericsson">
-                    </div>
-                    <div class="form-controll padding">
-                        E.A.T.
-                        <input class="checkbox checkboxes" type="checkbox" value="E.A.T.">
-                    </div>
-                </div>
-                <div class="form-group top-buffer">
-                    <button class="btn btn-info random-lunch display">Get lunch?</button>
-                    <button class="btn btn-danger reload-lunch display-none">Reload</button>
-                    <div class="top-buffer">
-                        <h3 class="food"></h3>
-                    </div>
+   <body>   
+        <div class="container top-buffer">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="hero">
+                        <img src="img/lindholmen.jpg">
+                        <h1>Dagens Lunch</h1>
+                    </div>    
                 </div>
             </div>
-        </div>
-        <div class="row">
-            @foreach($resturants as $item)               
-            <div class="col-xs-12 full-width">
-                <div class="resturant-wrapper">
-                    <h5>{{ $item['name'] }}</h5>
-                </div>                  
-                <div class="menu">
-                    @foreach($item['menu'] as $i)
-                    <div class="row extra-padding"> 
-                    <div class="col-xs-1 col-md-1 {{$i['type']}}"><img src="/img/{{ $i['type']}}.png" width="40"></div>
-                    <div class="col-xs-11 col-md-9 dish">{{ $i['dish'] }}</div>
-                    <div class="col-xs-12 col-md-2 price">{{ $i['price'] }}</div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-inline top-buffer">
+                        <div class="form-controll padding">
+                            Select all
+                            <input class="checkbox all" type="checkbox" value="Select all">
+                        </div>
+                        <div class="form-controll padding">
+                            Äran
+                            <input class="checkbox checkboxes" type="checkbox" checked value="Äran">
+                        </div>
+                        <div class="form-controll padding">
+                            Kebab
+                            <input class="checkbox checkboxes" type="checkbox" checked value="Kebab">
+                        </div>
+                        <div class="form-controll padding">
+                            Korv
+                            <input class="checkbox checkboxes" type="checkbox" checked value="Korv">
+                        </div>
+                        <div class="form-controll padding">
+                            Indiskt
+                            <input class="checkbox checkboxes" type="checkbox"checked value="Indiskt">
+                        </div>
+                        <div class="form-controll padding">
+                            Pizza
+                            <input class="checkbox checkboxes" type="checkbox" checked value="Pizza">
+                        </div>
+                        <div class="form-controll padding">
+                            Thai
+                            <input class="checkbox checkboxes" type="checkbox" checked value="Thai">
+                        </div>
+                        <div class="form-controll padding">
+                            Siencepark
+                            <input class="checkbox checkboxes" type="checkbox" checked value="Siencepark">
+                        </div>
+                        <div class="form-controll padding">
+                            Ericsson
+                            <input class="checkbox checkboxes" type="checkbox" checked value="Ericsson">
+                        </div>
+                        <div class="form-controll padding">
+                            E.A.T.
+                            <input class="checkbox checkboxes" type="checkbox" value="E.A.T.">
+                        </div>
                     </div>
-                    @endforeach
-                </div>               
+                    <div class="form-group top-buffer">
+                        <button class="btn btn-info random-lunch display">Get lunch?</button>
+                        <button class="btn btn-danger reload-lunch display-none">Reload</button>
+                        <div class="top-buffer">
+                            <h3 class="food"></h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-            @endforeach
+            <div class="row">
+                @foreach($resturants as $item)               
+                <div class="col-md-12 full-width">
+                    <div class="resturant-wrapper">
+                        <h5>{{ $item['name'] }}</h5>
+                    </div>                  
+                    <div class="menu">
+                        @foreach($item['menu'] as $i)
+                        <div class="row extra-padding"> 
+                        <div class="col-xs-1 col-md-1 {{$i['type']}}"><img src="/img/{{ $i['type']}}.png" width="40"></div>
+                        <div class="col-xs-11 col-md-9 dish">{{ $i['dish'] }}</div>
+                        <div class="col-xs-12 col-md-2 price">{{ $i['price'] }}</div>
+                        </div>
+                        @endforeach
+                    </div>               
+                </div>
+                @endforeach
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
