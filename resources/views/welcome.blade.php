@@ -16,7 +16,10 @@
     <div class="container top-buffer">
         <div class="row">
             <div class="col-md-12">
+            <div class="hero">
+            <img src="img/lindholmen.jpg">
                 <h1>Dagens Lunch</h1>
+            </div>    
             </div>
         </div>
         <div class="row">
