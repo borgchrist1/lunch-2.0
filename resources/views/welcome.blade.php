@@ -99,9 +99,11 @@
                     <h3>{{ $item['name'] }}</h3>
                 </div>                  
                 <div class="menu">
+                    <ul>
                     @foreach($item['menu'] as $i) 
-                    {{ $i['dish'] }}
+                    <li>{{ $i['dish'] }}</li>
                     @endforeach
+                    </ul>
                 </div>               
             </div>
             @endforeach
