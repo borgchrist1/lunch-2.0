@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <style>
     .top-buffer {
         margin-top: 15px;
@@ -21,6 +22,10 @@
     }
     .display {
         display: block;
+    }
+    .resturant-wrapper{
+        width: 100%;
+        background: #93edb8;
     }
     </style>
     </head>
@@ -88,11 +93,11 @@
             @foreach($resturants as $item)               
             <div class="col-xs-12">
                 <div class="resturant-wrapper">
-                    <li><h1>{{ $item['name'] }}</h1></li>
+                    <h3>{{ $item['name'] }}</h3>
                 </div>                  
                 <div class="menu">
                     @foreach($item['menu'] as $i) 
-                    <li>{{ $i['dish'] }}</li>
+                    {{ $i['dish'] }}
                     @endforeach
                 </div>               
             </div>
