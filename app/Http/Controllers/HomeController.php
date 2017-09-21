@@ -30,6 +30,6 @@ class HomeController extends Controller
                 $type = $node->text();
             }
          });
-        return view ('welcome', ['resturants' => $resturants]);
+        return view ('welcome', compact('resturants'));
     }
 }
