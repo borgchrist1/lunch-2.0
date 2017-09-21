@@ -18,7 +18,9 @@
                 <div class="col-md-12">
                     <div class="hero">
                         <img src="img/lindholmen.jpg">
-                        <h1>Dagens Lunch</h1>
+                        <div class="title-wrapper">
+                            <h1>Dagens Lunch</h1>
+                        </div>
                     </div>    
                 </div>
             </div>
