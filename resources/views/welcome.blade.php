@@ -85,7 +85,6 @@
             </div>
         </div>
         <div class="row">
-        {{--  {{ var_dump($resturants) }}  --}}
             @foreach($resturants as $item)               
             <div class="col-xs-12">
                 <div class="resturant-wrapper">
