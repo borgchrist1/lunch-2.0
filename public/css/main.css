@@ -12,7 +12,7 @@
 }
 .resturant-wrapper {
     width: 100%;
-    background: #93edb8;
+    background: #5bc0de;
 }
 .full-width {
     width: 100%;
@@ -26,9 +26,10 @@
     justify-content: center;
     align-items: center;
 }
-.resturant-wrapper {
+.resturant-wrapper h5 {
     padding-left: 10px;
 }
-.Kött {
-    background-image: url("../img/meat.png");
+.price {
+    text-align: right;
+    
 }

@@ -76,13 +76,13 @@
             @foreach($resturants as $item)               
             <div class="col-xs-12 full-width">
                 <div class="resturant-wrapper">
-                    <h4>{{ $item['name'] }}</h4>
+                    <h5>{{ $item['name'] }}</h5>
                 </div>                  
                 <div class="menu">
                     @foreach($item['menu'] as $i)
                     <div class="row extra-padding"> 
-                    <div class="col-xs-6 col-md-1 {{$i['type']}}"><img src="/img/{{ $i['type']}}.png" width="40"></div>
-                    <div class="col-xs-6 col-md-9 dish">{{ $i['dish'] }}</div>
+                    <div class="col-xs-1 col-md-1 {{$i['type']}}"><img src="/img/{{ $i['type']}}.png" width="40"></div>
+                    <div class="col-xs-11 col-md-9 dish">{{ $i['dish'] }}</div>
                     <div class="col-xs-12 col-md-2 price">{{ $i['price'] }}</div>
                     </div>
                     @endforeach
