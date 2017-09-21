@@ -10,27 +10,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-        <style>
-    .top-buffer {
-        margin-top: 15px;
-    }
-    .padding {
-        padding-right: 20px;
-    }
-    .display-none {
-        display: none;
-    }
-    .display {
-        display: block;
-    }
-    .resturant-wrapper{
-        width: 100%;
-        background: #93edb8;
-    }
-    .full-width{
-        width: 100%;
-    }
-    </style>
+        <link rel="stylesheet" href="/css/main.css" type="text/css">
     </head>
    <body>
     <div class="container top-buffer">
@@ -96,14 +76,16 @@
             @foreach($resturants as $item)               
             <div class="col-xs-12 full-width">
                 <div class="resturant-wrapper">
-                    <h3>{{ $item['name'] }}</h3>
+                    <h4>{{ $item['name'] }}</h4>
                 </div>                  
                 <div class="menu">
-                    <ul>
-                    @foreach($item['menu'] as $i) 
-                    <li>{{ $i['dish'] }}</li>
+                    @foreach($item['menu'] as $i)
+                    <div class="row extra-padding"> 
+                    <div class="col-xs-6 col-md-1 {{$i['type']}}"><img src="/img/{{ $i['type']}}.png" width="40"></div>
+                    <div class="col-xs-6 col-md-9 dish">{{ $i['dish'] }}</div>
+                    <div class="col-xs-12 col-md-2 price">{{ $i['price'] }}</div>
+                    </div>
                     @endforeach
-                    </ul>
                 </div>               
             </div>
             @endforeach
