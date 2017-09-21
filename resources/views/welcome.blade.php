@@ -27,6 +27,9 @@
         width: 100%;
         background: #93edb8;
     }
+    .full-width{
+        width: 100%;
+    }
     </style>
     </head>
    <body>
@@ -91,7 +94,7 @@
         </div>
         <div class="row">
             @foreach($resturants as $item)               
-            <div class="col-xs-12">
+            <div class="col-xs-12 full-width">
                 <div class="resturant-wrapper">
                     <h3>{{ $item['name'] }}</h3>
                 </div>                  
