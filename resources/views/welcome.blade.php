@@ -85,14 +85,20 @@
             </div>
         </div>
         <div class="row">
-        {{ var_dump($resturants) }}
-            
-        <div class="col-xs-12">
-        <div class="resturant-wrapper">
-            
+        {{--  {{ var_dump($resturants) }}  --}}
+            @foreach($resturants as $item)               
+            <div class="col-xs-12">
+                <div class="resturant-wrapper">
+                    <li><h1>{{ $item['name'] }}</h1></li>
+                </div>                  
+                <div class="menu">
+                    @foreach($item['menu'] as $i) 
+                    <li>{{ $i['dish'] }}</li>
+                    @endforeach
+                </div>               
+            </div>
+            @endforeach
         </div>
-    </div>
-</div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
