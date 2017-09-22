@@ -31,42 +31,12 @@
                             Select all
                             <input class="checkbox all" type="checkbox" value="Select all">
                         </div>
+                        @foreach($resturants as $item)
                         <div class="form-controll padding">
-                            Äran
-                            <input class="checkbox checkboxes" type="checkbox" checked value="Äran">
+                            {{ $item['name'] }}
+                            <input class="checkbox checkboxes" type="checkbox" checked value="{{ $item['name'] }}">
                         </div>
-                        <div class="form-controll padding">
-                            Kebab
-                            <input class="checkbox checkboxes" type="checkbox" checked value="Kebab">
-                        </div>
-                        <div class="form-controll padding">
-                            Korv
-                            <input class="checkbox checkboxes" type="checkbox" checked value="Korv">
-                        </div>
-                        <div class="form-controll padding">
-                            Indiskt
-                            <input class="checkbox checkboxes" type="checkbox"checked value="Indiskt">
-                        </div>
-                        <div class="form-controll padding">
-                            Pizza
-                            <input class="checkbox checkboxes" type="checkbox" checked value="Pizza">
-                        </div>
-                        <div class="form-controll padding">
-                            Thai
-                            <input class="checkbox checkboxes" type="checkbox" checked value="Thai">
-                        </div>
-                        <div class="form-controll padding">
-                            Siencepark
-                            <input class="checkbox checkboxes" type="checkbox" checked value="Siencepark">
-                        </div>
-                        <div class="form-controll padding">
-                            Ericsson
-                            <input class="checkbox checkboxes" type="checkbox" checked value="Ericsson">
-                        </div>
-                        <div class="form-controll padding">
-                            E.A.T.
-                            <input class="checkbox checkboxes" type="checkbox" value="E.A.T.">
-                        </div>
+                        @endforeach
                     </div>
                     <div class="form-group top-buffer">
                         <button class="btn btn-info random-lunch display">Get lunch?</button>
