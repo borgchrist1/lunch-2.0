@@ -31,11 +31,13 @@
                             Select all
                             <input class="checkbox all" type="checkbox" value="Select all">
                         </div>
+                        <?php $number = 0; ?>
                         @foreach($resturants as $item)
                         <div class="form-controll padding">
                             {{ $item['name'] }}
-                            <input class="checkbox checkboxes" type="checkbox" checked value="{{ $item['name'] }}">
+                            <input class="checkbox checkboxes" id="{{ $number }}" type="checkbox" checked value="{{ $item['name'] }}">
                         </div>
+                        <?php $number++; ?>
                         @endforeach
                     </div>
                     <div class="form-group top-buffer">
@@ -48,9 +50,10 @@
                 </div>
             </div>
             <div class="row">
+                <?php $number = 0; ?>
                 @foreach($resturants as $item)               
-                <div class="col-md-12 full-width">
-                    <div class="resturant-wrapper">
+                <div class="col-md-12 full-width" id="{{ $number }}">
+                    <div class="resturant-wrapper"></div>
                         <h5>{{ $item['name'] }}</h5>
                     </div>                  
                     <div class="menu">
@@ -63,6 +66,7 @@
                         @endforeach
                     </div>               
                 </div>
+                <?php $number++; ?>
                 @endforeach
             </div>
         </div>
