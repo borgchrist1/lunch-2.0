@@ -16,6 +16,7 @@
 
 .title-wrapper {
     position: absolute;
+    border-radius: 3px;
     background: rgba(0, 0, 0, .7);
     top: 65%;
     margin-bottom: 0;

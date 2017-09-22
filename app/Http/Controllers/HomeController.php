@@ -13,6 +13,7 @@ class HomeController extends Controller
         $current;
         $type;
         $dish;
+        
         $crawler = \Goutte::request('GET', 'https://www.lindholmen.se/pa-omradet/dagens-lunch');
         $crawler->filter('.title a, .dish-name, .icon-dish, .table-list__column--price')->each(function ($node) use(&$resturants, &$current, &$type, &$dish) {
            
