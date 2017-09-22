@@ -13,12 +13,13 @@ class HomeController extends Controller
         $current;
         $type;
         $dish;
+        $number = 0;
         
         $crawler = \Goutte::request('GET', 'https://www.lindholmen.se/pa-omradet/dagens-lunch');
-        $crawler->filter('.title a, .dish-name, .icon-dish, .table-list__column--price')->each(function ($node) use(&$resturants, &$current, &$type, &$dish) {
+        $crawler->filter('.title a, .dish-name, .icon-dish, .table-list__column--price')->each(function ($node) use(&$resturants, &$current, &$type, &$dish, &$number) {
            
             if($node->attr('href')){  
-                $resturant = ['name' => $node->text(), 'menu' => []];
+                $resturant = ['name' => $node->text(), 'id' => $number, 'menu' => []];
                 $current = array_push($resturants, $resturant) - 1;
             } else if($node->attr('class') === 'dish-name'){
                 $dish = $node->text();  
@@ -27,6 +28,7 @@ class HomeController extends Controller
                 $arr = ['type' => $type, 'dish' => $dish, 'price' => $price];
                 //$resturants[$current]['menu_option'] = [];
                 array_push($resturants[$current]['menu'], $arr);
+                $number++;
             } else {
                 $type = $node->text();
             }
