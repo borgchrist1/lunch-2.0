@@ -19,8 +19,9 @@ class HomeController extends Controller
         $crawler->filter('.title a, .dish-name, .icon-dish, .table-list__column--price')->each(function ($node) use(&$resturants, &$current, &$type, &$dish, &$number) {
            
             if($node->attr('href')){  
-                $resturant = ['name' => $node->text(), 'id' => $number, 'menu' => []];
+                $resturant = ['id' => $number, 'name' => $node->text(), 'menu' => []];
                 $current = array_push($resturants, $resturant) - 1;
+                $number++;
             } else if($node->attr('class') === 'dish-name'){
                 $dish = $node->text();  
             } else if(strpos($node->text(), 'kr')){
@@ -28,11 +29,11 @@ class HomeController extends Controller
                 $arr = ['type' => $type, 'dish' => $dish, 'price' => $price];
                 //$resturants[$current]['menu_option'] = [];
                 array_push($resturants[$current]['menu'], $arr);
-                $number++;
             } else {
                 $type = $node->text();
             }
          });
-        return view ('welcome', compact('resturants'));
+        //return view ('welcome', compact('resturants'));
+        return $resturants;
     }
 }
