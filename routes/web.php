@@ -16,4 +16,4 @@
 
 
 Route::get('/', 'HomeController@index');
-Route::get('/temp/{id}', 'TempController@index');
+Route::get('/temp/{id}/{email}', 'TempController@index');

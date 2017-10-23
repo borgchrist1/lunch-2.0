@@ -10,10 +10,14 @@ use \App\Mail\mailTemp;
 
 class TempController extends Controller
 {
-   public function index ($id)
+    /**
+    * @param int $id
+    * @param string $email
+    * @return null
+    */
+   public function index ($id, $email)
    {
-       
-        Mail::to('jeremydanner2@gmail.com')->send(new mailTemp());    
+        Mail::to($email)->send(new mailTemp());
         return;
    }
 }
